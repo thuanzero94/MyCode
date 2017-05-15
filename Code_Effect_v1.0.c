@@ -1,0 +1,1152 @@
+#include <REGX52.H>
+#include<stdlib.h>
+unsigned int i,j,k,n;
+ 
+ sbit 	c1 = P1^0;
+ sbit 	c2 = P1^1;
+ sbit	c3 = P1^2;
+ sbit	c4 = P1^3;
+ sbit	c5 = P1^4;
+ sbit	c6 = P1^5;
+ sbit	c7 = P1^6;
+ sbit	c8 = P1^7;
+ sbit	c9 = P3^0;
+ sbit	c10 = P3^1;
+ sbit	c11 = P3^2;
+ sbit	c12 = P3^3;
+ sbit	c13 = P3^4;
+ sbit	c14 = P3^5;
+ sbit	c15 = P3^6;
+ sbit	c16 = P3^7;
+ sbit	c17 = P2^0;
+ sbit	c18 = P2^1;
+ sbit	c19 = P2^2;
+ sbit	c20 = P2^3;
+ sbit	c21 = P2^4;
+ sbit	c22 = P2^5;
+ sbit	c23 = P2^6;
+ sbit	c24 = P2^7;
+ sbit   c25 = P0^6;
+ 
+ sbit	L1 = P0^0;
+ sbit	L2 = P0^1;
+ sbit	L3 = P0^2;
+ sbit	L4 = P0^3;
+ sbit	L5 = P0^4;
+
+//=======================================
+void tre(unsigned int t)
+	{
+	unsigned int i;
+	for(i=0;i<=t;i++);
+	}
+//---------------------------------------
+void tatcacot()
+	{
+	P1=P2=P3=0x00;c25=0;
+	}
+//---------------------------------------
+void xoatatcacot()
+	{
+	P1=P2=P3=0xff;c25=1;
+	}
+//---------------------------------------
+void xoa()
+	{
+	P0=P1=P2=P3=0xff;
+	}
+//---------------------------------------
+void toara(unsigned int time, unsigned char n)
+	{
+	xoa();
+	for(i=0;i<=n;i++)
+		{
+		L1=L2=L3=L4=L5=0;c13=0;tre(time);
+		xoa();
+		L1=L2=L3=L4=L5=0;c7=c8=c9=c12=c14=c17=c18=c19=0;tre(time);
+		xoa();
+		L1=L2=L3=L4=L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		xoa();
+		}
+	}
+//----------------------------------------
+void sangdan(unsigned int time, unsigned char n)
+	{
+	for(i=0;i<=n;i++)
+		{
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c13=0;tre(time);c18=0;tre(time);c19=0;tre(time);c14=0;tre(time);
+		c9=0; tre(time);c8=0; tre(time);c7=0; tre(time);c12=0;tre(time);
+		c17=0;tre(time);c22=0;tre(time);c23=0;tre(time);c24=0;tre(time);
+		c25=0;tre(time);c20=0;tre(time);c15=0;tre(time);c10=0;tre(time);
+		c5=0; tre(time);c4=0; tre(time);c3=0; tre(time);c2=0; tre(time);
+		c1=0; tre(time);c6=0; tre(time);c11=0;tre(time);c16=0;tre(time);
+		c21=0;tre(time);
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c21=0;tre(time);
+		c16=0;tre(time);c11=0;tre(time); c6=0; tre(time);c1=0; tre(time);
+		c2=0; tre(time);c3=0; tre(time);c4=0; tre(time);c5=0; tre(time);
+		c10=0;tre(time);c15=0;tre(time);c20=0;tre(time);c25=0;tre(time);
+		c24=0;tre(time);c23=0;tre(time);c22=0;tre(time);c17=0;tre(time);
+		c12=0;tre(time);c7=0; tre(time);c8=0; tre(time);c9=0; tre(time);
+		c14=0;tre(time);c19=0;tre(time);c18=0;tre(time);c13=0;tre(time);
+		}								   
+	}
+//----------------------------------------
+void nuocdang(unsigned int time, unsigned char n)
+	{
+	unsigned char M[5]={0xfe,0xfd,0xfb,0xf7,0xef};
+	xoa();
+	for(i=0;i<=n;i++)
+		{
+		for(j=0;j<=4;j++)
+			{
+			P0=M[j];
+			tatcacot();
+			tre(time);
+			}
+		}
+	}
+//----------------------------------------
+void choptat(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{	
+		P0=P1=P2=P3=0;tre(time);
+		xoa();tre(time);
+		}
+	}
+//----------------------------------------
+void quaydung(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c11=c12=c13=c14=c15=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c6=c13=c20=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c1=c7=c13=c19=c25=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c2=c13=c24=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c3=c8=c13=c18=c23=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c4=c13=c22=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c5=c9=c13=c17=c21=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c16=c13=c10=0;
+		tre(time);
+		}
+	}
+//----------------------------------------
+void quaydung2(unsigned int time,unsigned char n)
+	{
+		for(i=0;i<n;i++)
+		{
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c11=c12=c13=c14=c15=0;
+		c3=c8=c13=c18=c23=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c6=c13=c20=0;
+		c22=c13=c4=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c1=c7=c13=c19=c25=0;
+		c21=c17=c13=c9=c5=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c2=c13=c24=0;
+		c16=c13=c10=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c3=c8=c13=c18=c23=0;
+		c11=c12=c13=c14=c15=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c4=c13=c22=0;
+		c6=c13=c20=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c5=c9=c13=c17=c21=0;
+		c1=c7=c13=c19=c25=0;
+		tre(time);
+
+		xoa();
+		L1=L2=L3=L4=L5=0;
+		c16=c13=c10=0;
+		c2=c13=c24=0;
+		tre(time);
+		}
+	}
+//----------------------------------------
+void xeptang(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		xoa();
+		L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		L4=L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		L3=L4=L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		L2=L3=L4=L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		L1=L2=L3=L4=L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		}
+	}
+//----------------------------------------
+void luonsong(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		xoa();
+		for(k=0;k<time;k++)
+			{
+			L5=0;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=0;tre(50);
+			L5=1;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=1;tre(50);
+			L4=0;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=0;tre(50);
+			L4=1;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=1;tre(50);
+
+			L1=0;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=0;tre(50);
+			L1=1;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=1;tre(50);
+			L2=0;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=0;tre(50);
+			L2=1;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=1;tre(50);
+			}
+		for(k=0;k<time;k++)
+			{
+			L4=0;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=0;tre(50);
+			L4=1;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=1;tre(50);
+			L5=0;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=0;tre(50);
+			L5=1;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=1;tre(50);
+
+			L2=0;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=0;tre(50);
+			L2=1;c1=c2=c3=c4=c5=c11=c12=c13=c14=c15=c21=c22=c23=c24=c25=1;tre(50);
+			L1=0;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=0;tre(50);
+			L1=1;c6=c7=c8=c9=c10=c16=c17=c18=c19=c20=1;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void chu_H(unsigned int time, unsigned char n){
+	for(i=0; i<n; i++){
+		//1
+		for(k=0; k<time; k++){
+			xoa();
+			L1=0;c1=c5=0;c2=c3=c4=1;tre(20);
+			xoa();
+			L2=0;c1=c5=0;c2=c3=c4=1;tre(20);
+			xoa();
+			L3=0;c1=c2=c3=c4=c5=0;tre(20);
+			xoa();
+			L4=0;c1=c5=0;c2=c3=c4=1;tre(20);
+			xoa();
+			L5=0;c1=c5=0;c2=c3=c4=1;tre(20);
+		}
+		//2
+		for(k=0; k<time; k++){
+			xoa();
+			L1=0;c6=c10=0;c7=c8=c9=1;tre(20);
+			xoa();
+			L2=0;c6=c10=0;c7=c8=c9=1;tre(20);
+			xoa();
+			L3=0;c6=c10=c7=c8=c9=0;tre(20);
+			xoa();
+			L4=0;c6=c10=0;c7=c8=c9=1;tre(20);
+			xoa();
+			L5=0;c6=c10=0;c7=c8=c9=1;tre(20);
+		}
+		//3
+		for(k=0; k<time; k++){
+			xoa();
+			L1=0;c11=c15=0;c12=c13=c14=1;tre(20);
+			xoa();
+			L2=0;c11=c15=0;c12=c13=c14=1;tre(20);
+			xoa();
+			L3=0;c11=c15=c12=c13=c14=0;tre(20);
+			xoa();
+			L4=0;c11=c15=0;c12=c13=c14=1;tre(20);
+			xoa();
+			L5=0;c11=c15=0;c12=c13=c14=1;tre(20);
+		}
+		//4
+		for(k=0; k<time; k++){
+			xoa();
+			L1=0;c16=c20=0;c17=c18=c19=1;tre(20);
+			xoa();
+			L2=0;c16=c20=0;c17=c18=c19=1;tre(20);
+			xoa();
+			L3=0;c16=c20=c17=c18=c19=0;tre(20);
+			xoa();
+			L4=0;c16=c20=0;c17=c18=c19=1;tre(20);
+			xoa();
+			L5=0;c16=c20=0;c17=c18=c19=1;tre(20);
+		}
+		//5
+		for(k=0; k<time; k++){
+			xoa();
+			L1=0;c21=c25=0;c22=c23=c24=1;tre(20);
+			xoa();
+			L2=0;c21=c25=0;c22=c23=c24=1;tre(20);
+			xoa();
+			L3=0;c21=c25=c22=c23=c24=0;tre(20);
+			xoa();
+			L4=0;c21=c25=0;c22=c23=c24=1;tre(20);
+			xoa();
+			L5=0;c21=c25=0;c22=c23=c24=1;tre(20);
+		}
+	}
+}
+//----------------------------------------
+void chu_E(unsigned int time, unsigned char n){
+	for(i=0; i<n; i++){
+		//1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c1=c2=c3=c4=c5=0;tre(20);
+			xoa();
+			L2=0;c1=0;c2=c3=c4=c5=1;tre(20);
+			xoa();
+			L3=0;c1=c2=c3=0;c4=c5=1;tre(20);
+			xoa();
+			L4=0;c1=0;c2=c3=c4=c5=1;tre(20);
+			xoa();
+			L5=0;c1=c2=c3=c4=c5=0;tre(20);
+		}
+		//2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c10=c9=c8=c7=c6=0;tre(20);
+			xoa();
+			L2=0;c10=0;c9=c8=c7=c6=1;tre(20);
+			xoa();
+			L3=0;c10=c9=c8=0;c7=c6=1;tre(20);
+			xoa();
+			L4=0;c10=0;c9=c8=c7=c6=1;tre(20);
+			xoa();
+			L5=0;c10=c9=c8=c7=c6=0;tre(20);
+		}
+		//3
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L2=0;c11=0;c12=c13=c14=c15=1;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=0;c14=c15=1;tre(20);
+			xoa();
+			L4=0;c11=0;c12=c13=c14=c15=1;tre(20);
+			xoa();
+			L5=0;c11=c12=c13=c14=c15=0;tre(20);
+		}
+		//4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c20=c19=c18=c17=c16=0;tre(20);
+			xoa();
+			L2=0;c20=0;c19=c18=c17=c16=1;tre(20);
+			xoa();
+			L3=0;c20=c19=c18=0;c17=c16=1;tre(20);
+			xoa();
+			L4=0;c20=0;c19=c18=c17=c16=1;tre(20);
+			xoa();
+			L5=0;c20=c19=c18=c17=c16=0;tre(20);
+		}
+		//5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c21=c22=c23=c24=c25=0;tre(20);
+			xoa();
+			L2=0;c21=0;c22=c23=c24=c25=1;tre(20);
+			xoa();
+			L3=0;c21=c22=c23=0;c24=c25=1;tre(20);
+			xoa();
+			L4=0;c21=0;c22=c23=c24=c25=1;tre(20);
+			xoa();
+			L5=0;c21=c22=c23=c24=c25=0;tre(20);
+		}
+	}
+}
+//----------------------------------------
+void chu_N(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		for(k=0;k<time;k++){
+			xoa();
+			
+		}
+	}
+}
+//----------------------------------------
+void chu_I(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c1=c2=c3=c4=c5=0;tre(20);
+			xoa();
+			L2=0;c3=0;tre(20);
+			xoa();
+			L3=0;c3=0;tre(20);
+			xoa();
+			L4=0;c3=0;tre(20);
+			xoa();
+			L5=0;c1=c2=c3=c4=c5=0;tre(20);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c6=c7=c8=c9=c10=0;tre(20);
+			xoa();
+			L2=0;c8=0;tre(20);
+			xoa();
+			L3=0;c8=0;tre(20);
+			xoa();
+			L4=0;c8=0;tre(20);
+			xoa();
+			L5=0;c6=c7=c8=c9=c10=0;tre(20);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L2=0;c13=0;tre(20);
+			xoa();
+			L3=0;c13=0;tre(20);
+			xoa();
+			L4=0;c13=0;tre(20);
+			xoa();
+			L5=0;c11=c12=c13=c14=c15=0;tre(20);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c16=c17=c18=c19=c20=0;tre(20);
+			xoa();
+			L2=0;c18=0;tre(20);
+			xoa();
+			L3=0;c18=0;tre(20);
+			xoa();
+			L4=0;c18=0;tre(20);
+			xoa();
+			L5=0;c16=c17=c18=c19=c20=0;tre(20);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c21=c22=c23=c24=c25=0;tre(20);
+			xoa();
+			L2=0;c23=0;tre(20);
+			xoa();
+			L3=0;c23=0;tre(20);
+			xoa();
+			L4=0;c23=0;tre(20);
+			xoa();
+			L5=0;c21=c22=c23=c24=c25=0;tre(20);
+			}
+		}
+	}
+//----------------------------------------
+void chu_L(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c1=c2=c3=c4=c5=0;tre(50);
+			xoa();
+			L2=0;c1=0;tre(50);
+			xoa();
+			L3=0;c1=0;tre(50);
+			xoa();
+			L4=0;c1=0;tre(50);
+			xoa();
+			L5=0;c1=0;tre(50);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c6=c7=c8=c9=c10=0;tre(50);
+			xoa();
+			L2=0;c6=0;tre(50);
+			xoa();
+			L3=0;c6=0;tre(50);
+			xoa();
+			L4=0;c6=0;tre(50);
+			xoa();
+			L5=0;c6=0;tre(50);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c11=c12=c13=c14=c15=0;tre(50);
+			xoa();
+			L2=0;c11=0;tre(50);
+			xoa();
+			L3=0;c11=0;tre(50);
+			xoa();
+			L4=0;c11=0;tre(50);
+			xoa();
+			L5=0;c11=0;tre(50);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c16=c17=c18=c19=c20=0;tre(50);
+			xoa();
+			L2=0;c16=0;tre(50);
+			xoa();
+			L3=0;c16=0;tre(50);
+			xoa();
+			L4=0;c16=0;tre(50);
+			xoa();
+			L5=0;c16=0;tre(50);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c21=c22=c23=c24=c25=0;tre(50);
+			xoa();
+			L2=0;c21=0;tre(50);
+			xoa();
+			L3=0;c21=0;tre(50);
+			xoa();
+			L4=0;c21=0;tre(50);
+			xoa();
+			L5=0;c21=0;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void chu_O(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c2=c3=c4=0;tre(50);
+			xoa();
+			L2=0;c1=c5=0;tre(50);
+			xoa();
+			L3=0;c1=c5=0;tre(50);
+			xoa();
+			L4=0;c1=c5=0;tre(50);
+			xoa();
+			L5=0;c2=c3=c4=0;tre(50);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c7=c8=c9=0;tre(50);
+			xoa();
+			L2=0;c6=c10=0;tre(50);
+			xoa();
+			L3=0;c6=c10=0;tre(50);
+			xoa();
+			L4=0;c6=c10=0;tre(50);
+			xoa();
+			L5=0;c7=c8=c9=0;tre(50);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c12=c13=c14=0;tre(50);
+			xoa();
+			L2=0;c11=c15=0;tre(50);
+			xoa();
+			L3=0;c11=c15=0;tre(50);
+			xoa();
+			L4=0;c11=c15=0;tre(50);
+			xoa();
+			L5=0;c12=c13=c14=0;tre(50);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c17=c18=c19=0;tre(50);
+			xoa();
+			L2=0;c16=c20=0;tre(50);
+			xoa();
+			L3=0;c16=c20=0;tre(50);
+			xoa();
+			L4=0;c16=c20=0;tre(50);
+			xoa();
+			L5=0;c17=c18=c19=0;tre(50);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c22=c23=c24=0;tre(50);
+			xoa();
+			L2=0;c21=c25=0;tre(50);
+			xoa();
+			L3=0;c21=c25=0;tre(50);
+			xoa();
+			L4=0;c21=c25=0;tre(50);
+			xoa();
+			L5=0;c22=c23=c24=0;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void chu_V(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c3=0;tre(50);
+			xoa();
+			L2=0;c2=c4=0;tre(50);
+			xoa();
+			L3=0;c1=c5=0;tre(50);
+			xoa();
+			L4=0;c1=c5=0;tre(50);
+			xoa();
+			L5=0;c1=c5=0;tre(50);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c8=0;tre(50);
+			xoa();
+			L2=0;c7=c9=0;tre(50);
+			xoa();
+			L3=0;c6=c10=0;tre(50);
+			xoa();
+			L4=0;c6=c10=0;tre(50);
+			xoa();
+			L5=0;c6=c10=0;tre(50);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c13;tre(50);
+			xoa();
+			L2=0;c12=c14=0;tre(50);
+			xoa();
+			L3=0;c11=c15=0;tre(50);
+			xoa();
+			L4=0;c11=c15=0;tre(50);
+			xoa();
+			L5=0;c11=c15=0;tre(50);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c18=0;tre(50);
+			xoa();
+			L2=0;c17=c19=0;tre(50);
+			xoa();
+			L3=0;c16=c20=0;tre(50);
+			xoa();
+			L4=0;c16=c20=0;tre(50);
+			xoa();
+			L5=0;c16=c20=0;tre(50);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c23=0;tre(50);
+			xoa();
+			L2=0;c22=c24=0;tre(50);
+			xoa();
+			L3=0;c21=c25=0;tre(50);
+			xoa();
+			L4=0;c21=c25=0;tre(50);
+			xoa();
+			L5=0;c21=c25=0;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void chu_E(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c1=c2=c3=c4=c5=0;tre(50);
+			xoa();
+			L2=0;c1=0;tre(50);
+			xoa();
+			L3=0;c1=c2=c3=c4=c5=0;tre(50);
+			xoa();
+			L4=0;c1=0;tre(50);
+			xoa();
+			L5=0;c1=c2=c3=c4=c5=0;tre(50);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c6=c7=c8=c9=c10=0;tre(50);
+			xoa();
+			L2=0;c6=0;tre(50);
+			xoa();
+			L3=0;c6=c7=c8=c9=c10=0;tre(50);
+			xoa();
+			L4=0;c6=0;tre(50);
+			xoa();
+			L5=0;c6=c7=c8=c9=c10=0;tre(50);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c11=c12=c13=c14=c15=0;tre(50);
+			xoa();
+			L2=0;c11=0;tre(50);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(50);
+			xoa();
+			L4=0;c11=0;tre(50);
+			xoa();
+			L5=0;c11=c12=c13=c14=c15=0;tre(50);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c16=c17=c18=c19=c20=0;tre(50);
+			xoa();
+			L2=0;c16=0;tre(50);
+			xoa();
+			L3=0;c16=c17=c18=c19=c20=0;tre(50);
+			xoa();
+			L4=0;c16=0;tre(50);
+			xoa();
+			L5=0;c16=c17=c18=c19=c20=0;tre(50);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c21=c22=c23=c24=c25=0;tre(50);
+			xoa();
+			L2=0;c21=0;tre(50);
+			xoa();
+			L3=0;c21=c22=c23=c24=c25=0;tre(50);
+			xoa();
+			L4=0;c21=0;tre(50);
+			xoa();
+			L5=0;c21=c22=c23=c24=c25=0;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void chu_Y(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c1=0;tre(50);
+			xoa();
+			L2=0;c2=0;tre(50);
+			xoa();
+			L3=0;c3=0;tre(50);
+			xoa();
+			L4=0;c2=c4=0;tre(50);
+			xoa();
+			L5=0;c1=c5=0;tre(50);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c6=0;tre(50);
+			xoa();
+			L2=0;c7=0;tre(50);
+			xoa();
+			L3=0;c8=0;tre(50);
+			xoa();
+			L4=0;c7=c9=0;tre(50);
+			xoa();
+			L5=0;c6=c10=0;tre(50);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c11=0;tre(50);
+			xoa();
+			L2=0;c12=0;tre(50);
+			xoa();
+			L3=0;c13=0;tre(50);
+			xoa();
+			L4=0;c12=c14=0;tre(50);
+			xoa();
+			L5=0;c11=c15=0;tre(50);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c16=0;tre(50);
+			xoa();
+			L2=0;c17=0;tre(50);
+			xoa();
+			L3=0;c18=0;tre(50);
+			xoa();
+			L4=0;c17=c19=0;tre(50);
+			xoa();
+			L5=0;c16=c20=0;tre(50);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c21=0;tre(50);
+			xoa();
+			L2=0;c22=0;tre(50);
+			xoa();
+			L3=0;c23=0;tre(50);
+			xoa();
+			L4=0;c22=c24=0;tre(50);
+			xoa();
+			L5=0;c21=c25=0;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void chu_U(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		//1
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c2=c3=c4=0;tre(50);
+			xoa();
+			L2=0;c1=c5=0;tre(50);
+			xoa();
+			L3=0;c1=c5=0;tre(50);
+			xoa();
+			L4=0;c1=c5=0;tre(50);
+			xoa();
+			L5=0;c1=c5=0;tre(50);
+			}
+		//2
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c7=c8=c9=0;tre(50);
+			xoa();
+			L2=0;c6=c10=0;tre(50);
+			xoa();
+			L3=0;c6=c10=0;tre(50);
+			xoa();
+			L4=0;c6=c10=0;tre(50);
+			xoa();
+			L5=0;c6=c10=0;tre(50);
+			}
+		//3
+		for(k=0;k<time;k++)
+			{
+			xoa(); 
+			L1=0;c12=c13=c14=0;tre(50);
+			xoa();
+			L2=0;c11=c15=0;tre(50);
+			xoa();
+			L3=0;c11=c15=0;tre(50);
+			xoa();
+			L4=0;c11=c15=0;tre(50);
+			xoa();
+			L5=0;c11=c15=0;tre(50);
+			}
+		//4
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c17=c18=c19=0;tre(50);
+			xoa();
+			L2=0;c16=c20=0;tre(50);
+			xoa();
+			L3=0;c16=c20=0;tre(50);
+			xoa();
+			L4=0;c16=c20=0;tre(50);
+			xoa();
+			L5=0;c16=c20=0;tre(50);
+			}
+		//5
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c22=c23=c24=0;tre(50);
+			xoa();
+			L2=0;c21=c25=0;tre(50);
+			xoa();
+			L3=0;c21=c25=0;tre(50);
+			xoa();
+			L4=0;c21=c25=0;tre(50);
+			xoa();
+			L5=0;c21=c25=0;tre(50);
+			}
+		}
+	}
+//----------------------------------------
+void phaohoa(unsigned int time,unsigned char n)
+	{
+	xoa();
+	for(i=0;i<n;i++)
+		{
+		xoa();	
+		L3=0;c13=0;	
+		tre(time);
+
+		for(k=0;k<100;k++)
+			{
+			xoa();
+			L2=0;c7=c8=c9=c14=c19=c18=c17=c12=0;tre(50);
+			xoa();
+			L3=0;c7=c8=c9=c14=c19=c18=c17=c12=0;tre(50);
+			xoa();
+			L4=0;c7=c8=c9=c14=c19=c18=c17=c12=0;tre(50);
+			}
+		tre(time);
+		
+		for(k=0;k<100;k++)
+			{
+			xoa();
+			L1=0;tatcacot();tre(50);
+			xoa();
+			L2=0;tatcacot();tre(50);
+			xoa();
+			L3=0;tatcacot();tre(50);
+			xoa();
+			L4=0;tatcacot();tre(50);
+			xoa();
+			L5=0;tatcacot();tre(50);
+			}
+		tre(time);
+		}
+	}
+//----------------------------------------
+void quayngang(unsigned int time,unsigned char n)
+	{
+	for(i=0;i<n;i++)
+		{
+		for(k=0;k<time;k++)
+			{
+			xoa();	
+			L3=0;tatcacot();tre(20);
+			}	
+
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L2=0;c1=c2=c3=c4=c5=0;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L4=0;c21=c22=c23=c24=c25=0;tre(20);
+			}
+		
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c1=c2=c3=c4=c5=0;tre(20);
+			xoa();
+			L2=0;c6=c7=c8=c9=c10=0;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L4=0;c16=c17=c18=c19=c20=0;tre(20);
+			xoa();
+			L5=0;c21=c22=c23=c24=c25=0;tre(20);
+			}
+
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c6=c7=c8=c9=c10=0;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L5=0;c16=c17=c18=c19=c20=c25=0;tre(20);
+			}
+
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=L2=L3=L4=L5=0;c11=c12=c13=c14=c15=0;tre(20);
+			}
+
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c16=c17=c18=c19=c20=0;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L5=0;c6=c7=c8=c9=c10=0;tre(20);
+			}
+
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L1=0;c21=c22=c23=c24=c25=0;tre(20);
+			xoa();
+			L2=0;c16=c17=c18=c19=c20=0;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L4=0;c6=c7=c8=c9=c10=0;tre(20);
+			xoa();
+			L5=0;c1=c2=c3=c4=c5=0;tre(20);
+			}
+
+		for(k=0;k<time;k++)
+			{
+			xoa();
+			L2=0;c21=c22=c23=c24=c25=0;tre(20);
+			xoa();
+			L3=0;c11=c12=c13=c14=c15=0;tre(20);
+			xoa();
+			L4=0;c1=c2=c3=c4=c5=0;tre(20);
+			}
+		for(k=0;k<time;k++)
+			{
+			xoa();	
+			L3=0;tatcacot();tre(20);
+			}
+		}
+	}
+//----------------------------------------
+void banphao(unsigned int time,unsigned char n)
+  	{
+  	for(i=0;i<n;i++)
+		{
+		xoa();
+		c13=0;L1=0;tre(time);L1=1;L2=0;tre(time);L2=1;
+		L3=0;tre(time);L3=1;L4=0;tre(time);L4=1;L5=0;tre(time);L5=1;
+		xoa();
+		L5=0;c7=c8=c9=c14=c19=c18=c17=c12=0;tre(time);
+		
+		xoa();
+		L5=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		
+		xoa();
+		L4=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		
+		xoa();
+		L3=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		
+		xoa();
+		L2=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		
+		xoa();
+		L1=0;c1=c2=c3=c4=c5=c10=c15=c20=c25=c24=c23=c22=c21=c16=c11=c6=0;tre(time);
+		}
+	}	
+//========================================
+void main()
+	{
+	while(1)
+		{
+		toara(20000,5);
+		sangdan(10000,1);
+		nuocdang(15000,3);
+		nuocdang(10000,3);
+		nuocdang(5000,5);
+		nuocdang(3000,5);
+		quaydung(20000,3);
+		quaydung(10000,3);
+		quaydung(5000,5);
+		quaydung(3000,10);
+		choptat(10000,5);
+		xeptang(30000,5);
+		luonsong(50,10);
+		chu_I(50,1);
+		chu_L(50,1);
+		chu_O(50,1);
+		chu_V(50,1);
+		chu_E(50,1);
+		chu_Y(50,1);
+		chu_O(50,1);
+		chu_U(50,1);
+		phaohoa(8000,5);
+		quayngang(100,10);
+		quayngang(50,20);
+		toara(20000,3);
+		quaydung2(20000,5);
+		quaydung2(10000,8);
+		banphao(8000,10);
+		chu_I(50,1);
+		chu_L(50,1);
+		chu_O(50,1);
+		chu_V(50,1);
+		chu_E(50,1);
+		chu_Y(50,1);
+		chu_O(50,1);
+		chu_U(50,1);
+		banphao(8000,10);
+		}
+	}
