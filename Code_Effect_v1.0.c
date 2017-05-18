@@ -490,7 +490,7 @@ void E_FrontToBack(unsigned int time, unsigned char n){
 		for(k=0;k<time;k++){
 			xoa();
 			L1=0;c11=c12=c13=c14=c15=0;tre(10);xoa();
-			L2=0;c11=0tre(10);xoa();
+			L2=0;c11=0;tre(10);xoa();
 			L3=0;c11=c12=c13=c14=0;tre(10);xoa();
 			L4=0;c11=0;tre(10);xoa();
 			L5=0;c11=c12=c13=c14=c15=0;tre(10);xoa();
@@ -1361,7 +1361,7 @@ void O_Appear_RtoL(unsigned int time, unsigned char n){
 			xoa();
 			L2=0;c15=0;tre(10);xoa();
 			L3=0;c15=0;tre(10);xoa();
-			L4=0;c15=0;tre(10);xoa();
+			L4=0;c15=0;tre(10);
 		}
 		//stage 2
 		for(k=0;k<time;k++){
@@ -1370,7 +1370,7 @@ void O_Appear_RtoL(unsigned int time, unsigned char n){
 			L2=0;c14=0;tre(10);xoa();
 			L3=0;c14=0;tre(10);xoa();
 			L4=0;c14=0;tre(10);xoa();
-			L5=0;c15=0;tre(10);;
+			L5=0;c15=0;tre(10);
 		}
 		//stage 3
 		for(k=0;k<time;k++){
@@ -1379,7 +1379,7 @@ void O_Appear_RtoL(unsigned int time, unsigned char n){
 			L2=0;c13=0;tre(10);xoa();
 			L3=0;c13=0;tre(10);xoa();
 			L4=0;c13=0;tre(10);xoa();
-			L5=0;c14=c15=0;tre(10);;
+			L5=0;c14=c15=0;tre(10);
 		}
 		//stage 4
 		for(k=0;k<time;k++){
@@ -1388,7 +1388,7 @@ void O_Appear_RtoL(unsigned int time, unsigned char n){
 			L2=0;c12=0;tre(10);xoa();
 			L3=0;c12=0;tre(10);xoa();
 			L4=0;c12=0;tre(10);xoa();
-			L5=0;c13=c14=c15=0;tre(10);;
+			L5=0;c13=c14=c15=0;tre(10);
 		}
 		//stage 5
 		for(k=0;k<time;k++){
@@ -1647,7 +1647,7 @@ void V_hRotate(unsigned int time, unsigned char n){
 		//stage 3
 		for(k=0;k<time;k++){
 			xoa();
-			L3=0;c3=c9=c7=c11=c15=c20=c16=c21=c25;tre(10);
+			L3=0;c3=c9=c7=c11=c15=c20=c16=c21=c25=0;tre(10);
 		}
 		//stage 4
 		for(k=0;k<time;k++){
@@ -1831,91 +1831,536 @@ void Y_vRotate(unsigned int time, unsigned char n){
 		for(k=0;k<time;k++){
 			xoa();
 			L1=0;c13=0;tre(10);xoa();
-			L2=0;c12=c14=0;tre(10);xoa();
-			L3=0;c11=c15=0;tre(10);xoa();
-			L4=0;c11=c15=0;tre(10);xoa();
-			L5=0;c11=c15=0;tre(10);
+			L2=0;c13=0;tre(10);xoa();
+			L3=0;c7=c19=0;tre(10);xoa();
+			L4=0;c5=c21=0;tre(10);xoa();
+			L5=0;c5=c21=0;tre(10);
 		}
 	}
 	}
 }
 //----------------------------------------
-void U_FrontToBack(unsigned int time, unsigned char n)
-	{
-	for(i=0;i<n;i++)
-		{
-		//1
-		for(k=0;k<time;k++)
-			{
+void Y_hRotate(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//stage 1
+		for(k=0;k<time;k++){
 			xoa();
-			L1=0;c2=c3=c4=0;tre(50);
+			L1=0;c13=0;tre(10);xoa();
+			L2=0;c13=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k<time;k++){
 			xoa();
-			L2=0;c1=c5=0;tre(50);
+			L1=0;c3=0;tre(10);xoa();
+			L2=0;c8=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L4=0;c20=c16=0;tre(10);xoa();
+			L5=0;c21=c25=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
 			xoa();
-			L3=0;c1=c5=0;tre(50);
+			L3=0;c3=c8=c12=c14=c20=c16=c21=c25=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
 			xoa();
-			L4=0;c1=c5=0;tre(50);
+			L1=0;c21=c25=0;tre(10);xoa();
+			L2=0;c20=c16=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L4=0;c8=0;tre(10);xoa();
+			L5=0;c3=0;tre(10);
+		}
+		//stage 5
+		for(k=0;k<time;k++){
 			xoa();
-			L5=0;c1=c5=0;tre(50);
-			}
-		//2
-		for(k=0;k<time;k++)
-			{
+			L1=0;c11=c15=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L4=0;c13=0;tre(10);xoa();
+			L5=0;c13=0;tre(10);
+		}
+		//stage 6
+		for(k=0;k<time;k++){
 			xoa();
-			L1=0;c7=c8=c9=0;tre(50);
+			L1=0;c1=c5=0;tre(10);xoa();
+			L2=0;c10=c6=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L4=0;c18=0;tre(10);xoa();
+			L5=0;c23=0;tre(10);
+		}
+		//stage 7
+		for(k=0;k<time;k++){
 			xoa();
-			L2=0;c6=c10=0;tre(50);
+			L3=0;c23=c18=c12=c14=c10=c6=c1=c5=0;tre(10);
+		}
+		//stage 8
+		for(k=0;k<time;k++){
 			xoa();
-			L3=0;c6=c10=0;tre(50);
+			L5=0;c1=c5=0;tre(10);xoa();
+			L4=0;c10=c6=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L2=0;c18=0;tre(10);xoa();
+			L1=0;c23=0;tre(10);
+		}
+		//stage 1
+		for(k=0;k<time;k++){
 			xoa();
-			L4=0;c6=c10=0;tre(50);
-			xoa();
-			L5=0;c6=c10=0;tre(50);
-			}
-		//3
-		for(k=0;k<time;k++)
-			{
-			xoa(); 
-			L1=0;c12=c13=c14=0;tre(50);
-			xoa();
-			L2=0;c11=c15=0;tre(50);
-			xoa();
-			L3=0;c11=c15=0;tre(50);
-			xoa();
-			L4=0;c11=c15=0;tre(50);
-			xoa();
-			L5=0;c11=c15=0;tre(50);
-			}
-		//4
-		for(k=0;k<time;k++)
-			{
-			xoa();
-			L1=0;c17=c18=c19=0;tre(50);
-			xoa();
-			L2=0;c16=c20=0;tre(50);
-			xoa();
-			L3=0;c16=c20=0;tre(50);
-			xoa();
-			L4=0;c16=c20=0;tre(50);
-			xoa();
-			L5=0;c16=c20=0;tre(50);
-			}
-		//5
-		for(k=0;k<time;k++)
-			{
-			xoa();
-			L1=0;c22=c23=c24=0;tre(50);
-			xoa();
-			L2=0;c21=c25=0;tre(50);
-			xoa();
-			L3=0;c21=c25=0;tre(50);
-			xoa();
-			L4=0;c21=c25=0;tre(50);
-			xoa();
-			L5=0;c21=c25=0;tre(50);
-			}
+			L1=0;c13=0;tre(10);xoa();
+			L2=0;c13=0;tre(10);xoa();
+			L3=0;c12=c14=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
 		}
 	}
+}
+//----------------------------------------
+void U_FrontToBack(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c2=c3=c4=0;tre(10);xoa();
+			L2=0;c1=c5=0;tre(10);xoa();
+			L3=0;c1=c5=0;tre(10);xoa();
+			L4=0;c1=c5=0;tre(10);xoa();
+			L5=0;c1=c5=0;tre(10);			
+		}
+		//2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c7=c8=c9=0;tre(10);xoa();
+			L2=0;c6=c10=0;tre(10);xoa();
+			L3=0;c6=c10=0;tre(10);xoa();
+			L4=0;c6=c10=0;tre(10);xoa();
+			L5=0;c6=c10=0;tre(10);
+		}
+		//310
+		for(k=0;k<time;k++){
+			xoa(); 
+			L1=0;c12=c13=c14=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
+		}
+		//4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c17=c18=c19=0;tre(10);xoa();
+			L2=0;c16=c20=0;tre(10);xoa();
+			L3=0;c16=c20=0;tre(10);xoa();
+			L4=0;c16=c20=0;tre(10);xoa();
+			L5=0;c16=c20=0;tre(10);
+		}
+		//5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c22=c23=c24=0;tre(10);xoa();
+			L2=0;c21=c25=0;tre(10);xoa();
+			L3=0;c21=c25=0;tre(10);xoa();
+			L4=0;c21=c25=0;tre(10);xoa();
+			L5=0;c21=c25=0;tre(10);
+		}
+	}
+}
+//----------------------------------------
+void U_Appear_RtoL(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L2=0;c15=0;tre(10);xoa();
+			L3=0;c15=0;tre(10);xoa();
+			L4=0;c15=0;tre(10);xoa();
+			L5=0;c15=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c15=0;tre(10);xoa();
+			L2=0;c14=0;tre(10);xoa();
+			L3=0;c14=0;tre(10);xoa();
+			L4=0;c14=0;tre(10);xoa();
+			L5=0;c14=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c14=c15=0;tre(10);xoa();
+			L2=0;c13=0;tre(10);xoa();
+			L3=0;c13=0;tre(10);xoa();
+			L4=0;c13=0;tre(10);xoa();
+			L5=0;c13=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c13=c14=c15=0;tre(10);xoa();
+			L2=0;c12=0;tre(10);xoa();
+			L3=0;c12=0;tre(10);xoa();
+			L4=0;c12=0;tre(10);xoa();
+			L5=0;c12=0;tre(10);
+		}
+		//stage 5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c12=c13=c14=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
+		}
+	}
+}
+void U_vRotate(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+	for(j=0;j<2;j++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c12=c13=c14=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k>time;k++){
+			xoa();
+			L1=0;c9=c13=c17=0;tre(10);xoa();
+			L2=0;c1=c25=0;tre(10);xoa();
+			L3=0;c1=c25=0;tre(10);xoa();
+			L4=0;c1=c25=0;tre(10);xoa();
+			L5=0;c1=c25=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c8=c13=c18=0;tre(10);xoa();
+			L2=0;c3=c23=0;tre(10);xoa();
+			L3=0;c3=c23=0;tre(10);xoa();
+			L4=0;c3=c23=0;tre(10);xoa();
+			L5=0;c3=c23=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c7=c13=c19=0;tre(10);xoa();
+			L2=0;c5=c21=0;tre(10);xoa();
+			L3=0;c5=c21=0;tre(10);xoa();
+			L4=0;c5=c21=0;tre(10);xoa();
+			L5=0;c5=c21=0;tre(10);
+		}
+	}
+	}
+}
+//----------------------------------------
+void U_hRotate(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c12=c13=c14=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c2=c3=c4=0;tre(10);xoa();
+			L2=0;c10=c6=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c20=c16=0;tre(10);xoa();
+			L5=0;c21=c25=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L3=0;c2=c3=c4=c10=c6=c11=c15=c20=c16=c21=c25=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c21=c25=0;tre(10);xoa();
+			L2=0;c20=c16=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c10=c6=0;tre(10);xoa();
+			L5=0;c2=c3=c4=0;tre(10);
+		}
+		//stage 5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c15=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c12=c13=c14=0;tre(10);
+		}
+		//stage 6
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c1=c5=0;tre(10);xoa();
+			L2=0;c10=c6=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c20=c16=0;tre(10);xoa();
+			L5=0;c22=c23=c24=0;tre(10);
+		}
+		//stage 7
+		for(k=0;k<time;k++){
+			xoa();
+			L3=0;c22=c23=c24=c20=c16=c11=c15=c10=c6=c1=c5=0;tre(10);
+		}
+		//stage 8
+		for(k=0;k<time;k++){
+			xoa();
+			L5=0;c1=c5=0;tre(10);xoa();
+			L4=0;c10=c6=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L2=0;c16=c20=0;tre(10);xoa();
+			L1=0;c22=c23=c24=0;tre(10);
+		}
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c12=c13=c14=0;tre(10);xoa();
+			L2=0;c11=c15=0;tre(10);xoa();
+			L3=0;c11=c15=0;tre(10);xoa();
+			L4=0;c11=c15=0;tre(10);xoa();
+			L5=0;c11=c15=0;tre(10);
+		}
+	}
+}
+//----------------------------------------
+void K_FontToBack(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c1=c4=0;tre(10);xoa();
+			L2=0;c1=c3=0;tre(10);xoa();
+			L3=0;c1=c2=0;tre(10);xoa();
+			L4=0;c1=c3=0;tre(10);xoa();
+			L5=0;c1=c4=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c10=c7=0;tre(10);xoa();
+			L2=0;c10=c8=0;tre(10);xoa();
+			L3=0;c10=c9=0;tre(10);xoa();
+			L4=0;c10=c8=0;tre(10);xoa();
+			L5=0;c10=c7=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c14=0;tre(10);xoa();
+			L2=0;c11=c13=0;tre(10);xoa();
+			L3=0;c11=c12=0;tre(10);xoa();
+			L4=0;c11=c13=0;tre(10);xoa();
+			L5=0;c11=c14=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c20=c17=0;tre(10);xoa();
+			L2=0;c20=c18=0;tre(10);xoa();
+			L3=0;c20=c19=0;tre(10);xoa();
+			L4=0;c20=c18=0;tre(10);xoa();
+			L5=0;c20=c17=0;tre(10);
+		}
+		//stage 5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c21=c24=0;tre(10);xoa();
+			L2=0;c21=c23=0;tre(10);xoa();
+			L3=0;c21=c22=0;tre(10);xoa();
+			L4=0;c21=c23=0;tre(10);xoa();
+			L5=0;c21=c24=0;tre(10);
+		}
+	}
+}
+//----------------------------------------
+void K_Appear_RtoL(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c15=0;tre(10);xoa();
+			L2=0;c15=0;tre(10);xoa();
+			L3=0;c15=0;tre(10);xoa();
+			L4=0;c15=0;tre(10);xoa();
+			L5=0;c15=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c14=0;tre(10);xoa();
+			L2=0;c14=0;tre(10);xoa();
+			L3=0;c14=c15=0;tre(10);xoa();
+			L4=0;c14=0;tre(10);xoa();
+			L5=0;c14=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c13=0;tre(10);xoa();
+			L2=0;c13=c15=0;tre(10);xoa();
+			L3=0;c13=c14=0;tre(10);xoa();
+			L4=0;c13=c15=0;tre(10);xoa();
+			L5=0;c13=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c12=c15=0;tre(10);xoa();
+			L2=0;c12=c14=0;tre(10);xoa();
+			L3=0;c12=c13=0;tre(10);xoa();
+			L4=0;c12=c14=0;tre(10);xoa();
+			L5=0;c12=c15=0;tre(10);
+		}
+		//stage 5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c14=0;tre(10);xoa();
+			L2=0;c11=c13=0;tre(10);xoa();
+			L3=0;c11=c12=0;tre(10);xoa();
+			L4=0;c11=c13=0;tre(10);xoa();
+			L5=0;c11=c14=0;tre(10);
+		}
+	}
+}
+//----------------------------------------
+void K_vRotate(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c14=0;tre(10);xoa();
+			L2=0;c11=c13=0;tre(10);xoa();
+			L3=0;c11=c12=0;tre(10);xoa();
+			L4=0;c11=c13=0;tre(10);xoa();
+			L5=0;c11=c14=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k>time;k++){
+			xoa();
+			L1=0;c1=c17=0;tre(10);xoa();
+			L2=0;c1=c13=0;tre(10);xoa();
+			L3=0;c1=c9=0;tre(10);xoa();
+			L4=0;c1=c13=0;tre(10);xoa();
+			L5=0;c1=c17=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c3=c18=0;tre(10);xoa();
+			L2=0;c3=c13=0;tre(10);xoa();
+			L3=0;c3=c8=0;tre(10);xoa();
+			L4=0;c3=c13=0;tre(10);xoa();
+			L5=0;c3=c18=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c5=c19=0;tre(10);xoa();
+			L2=0;c5=c13=0;tre(10);xoa();
+			L3=0;c5=c7=0;tre(10);xoa();
+			L4=0;c5=c13=0;tre(10);xoa();
+			L5=0;c5=c19=0;tre(10);
+		}
+		//stage 5
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c15=c12=0;tre(10);xoa();
+			L2=0;c15=c13=0;tre(10);xoa();
+			L3=0;c15=c14=0;tre(10);xoa();
+			L4=0;c15=c13=0;tre(10);xoa();
+			L5=0;c15=c12=0;tre(10);xoa();
+		}
+		//stage 6
+		for(k=0;k>time;k++){
+			xoa();
+			L1=0;c25=c9=0;tre(10);xoa();
+			L2=0;c25=c13=0;tre(10);xoa();
+			L3=0;c25=c17=0;tre(10);xoa();
+			L4=0;c25=c13=0;tre(10);xoa();
+			L5=0;c25=c9=0;tre(10);
+		}
+		//stage 7
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c23=c8=0;tre(10);xoa();
+			L2=0;c23=c13=0;tre(10);xoa();
+			L3=0;c23=c18=0;tre(10);xoa();
+			L4=0;c23=c13=0;tre(10);xoa();
+			L5=0;c23=c8=0;tre(10);
+		}
+		//stage 8
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c21=c7=0;tre(10);xoa();
+			L2=0;c21=c13=0;tre(10);xoa();
+			L3=0;c21=c19=0;tre(10);xoa();
+			L4=0;c21=c13=0;tre(10);xoa();
+			L5=0;c21=c7=0;tre(10);
+		}
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c14=0;tre(10);xoa();
+			L2=0;c11=c13=0;tre(10);xoa();
+			L3=0;c11=c12=0;tre(10);xoa();
+			L4=0;c11=c13=0;tre(10);xoa();
+			L5=0;c11=c14=0;tre(10);
+		}
+	}
+}
+//----------------------------------------
+void K_hRotate(unsigned int time, unsigned char n){
+	for(i=0;i<n;i++){
+	for(j=0;j<2;j++){
+		//stage 1
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c11=c14=0;tre(10);xoa();
+			L2=0;c11=c13=0;tre(10);xoa();
+			L3=0;c11=c12=0;tre(10);xoa();
+			L4=0;c11=c13=0;tre(10);xoa();
+			L5=0;c11=c14=0;tre(10);
+		}
+		//stage 2
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c1=c4=0;tre(10);xoa();
+			L2=0;c10=c8=0;tre(10);xoa();
+			L3=0;c11=c12=0;tre(10);xoa();
+			L4=0;c20=c18=0;tre(10);xoa();
+			L5=0;c21=c24=0;tre(10);
+		}
+		//stage 3
+		for(k=0;k<time;k++){
+			xoa();
+			L3=0;c1=c4=c10=c8=c11=c12=c20=c18=c21=c24=0;tre(10);
+		}
+		//stage 4
+		for(k=0;k<time;k++){
+			xoa();
+			L1=0;c21=c24=0;tre(10);xoa();
+			L2=0;c20=c18=0;tre(10);xoa();
+			L3=0;c11=c13=0;tre(10);xoa();
+			L4=0;c10=c8=0;tre(10);xoa();
+			L5=0;c1=c4=0;tre(10);
+		}
+	}
+	}
+}
 //----------------------------------------
 void phaohoa(unsigned int time,unsigned char n)
 	{
@@ -2136,7 +2581,7 @@ void rongran_layer(unsigned int time, unsigned char n){
 	//5
 	c14=c17=c18=c13=0;tre(time);xoa();
 	c17=c18=c13=0;tre(time);xoa();
-	c18=c13=0;tre(time)xoa();
+	c18=c13=0;tre(time);xoa();
 	c13=0;tre(time);xoa();tre(time);
 	//Blink Center
 	for(i=0;i<n;i++){
@@ -2338,7 +2783,7 @@ void main()
 	{
 	while(1)
 		{
-		/*toara(20000,5);
+		toara(20000,5);
 		sangdan(10000,1);
 		nuocdang(15000,3);
 		nuocdang(10000,3);
@@ -2351,14 +2796,22 @@ void main()
 		choptat(10000,5);
 		xeptang(30000,5);
 		luonsong(50,10);
-		chu_I(50,1);
-		chu_L(50,1);
-		chu_O(50,1);
-		chu_V(50,1);
-		chu_E(50,1);
-		chu_Y(50,1);
-		chu_O(50,1);
-		chu_U(50,1);
+		I_FrontToBack(150,1);
+		I_hRotate(150,1);
+		L_FrontToBack(150,1);
+		L_hRotate(150,1);
+		O_FrontToBack(150,1);
+		O_hRotate(150,1);
+		V_FrontToBack(150,1);
+		V_hRotate(150,1);
+		E_FrontToBack(150,1);
+		E_hRotate(150,1);
+		Y_FrontToBack(150,1);
+		Y_hRotate(150,1);
+		O_FrontToBack(150,1);
+		O_hRotate(150,1);
+		U_FrontToBack(150,1);
+		U_hRotate(150,1);
 		phaohoa(8000,5);
 		quayngang(100,10);
 		quayngang(50,20);
@@ -2366,15 +2819,23 @@ void main()
 		quaydung2(20000,5);
 		quaydung2(10000,8);
 		banphao(8000,10);
-		chu_I(50,1);
-		chu_L(50,1);
-		chu_O(50,1);
-		chu_V(50,1);
-		chu_E(50,1);
-		chu_Y(50,1);
-		chu_O(50,1);
-		chu_U(50,1);
-		banphao(8000,10);*/
+		I_Appear_RtoL(150,1);
+		I_vRotate(150,1);
+		L_Appear_RtoL(150,1);
+		L_vRotate(150,1);
+		O_Appear_RtoL(150,1);
+		O_vRotate(150,1);
+		V_Appear_RtoL(150,1);
+		V_vRotate(150,1);
+		E_Appear_RtoL(150,1);
+		E_vRotate(150,1);
+		Y_Appear_RtoL(150,1);
+		Y_vRotate(150,1);
+		O_Appear_RtoL(150,1);
+		O_vRotate(150,1);
+		U_Appear_RtoL(150,1);
+		U_vRotate(150,1);
+		banphao(8000,10);
 			phaohoa_tanchay_traitim(10000, 3);
 		}
 	}
